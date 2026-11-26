@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { CMSProvider } from './context/CMSContext';
 import { CompareProvider } from './context/CompareContext';
@@ -25,7 +25,7 @@ export function App() {
     <AuthProvider>
       <CMSProvider>
         <CompareProvider>
-          <BrowserRouter>
+          <HashRouter>
             <div className="min-h-screen bg-[#F4F2EE] text-[#171717] font-sans flex flex-col selection:bg-[#A14F39] selection:text-white">
               {/* Global Navigation Header */}
               <Header />
@@ -51,7 +51,7 @@ export function App() {
               {/* Museum Archive Footer */}
               <Footer />
             </div>
-          </BrowserRouter>
+          </HashRouter>
         </CompareProvider>
       </CMSProvider>
     </AuthProvider>
@@ -59,3 +59,4 @@ export function App() {
 }
 
 export default App;
+

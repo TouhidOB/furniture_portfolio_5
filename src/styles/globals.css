@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-gallery: #F4F2EE;
+  --color-carbon: #171717;
+  --color-concrete: #D9D6D0;
+  --color-oxide: #A14F39;
+  --color-walnut: #634735;
+  --color-silver: #A8A7A4;
+  --color-white: #FFFFFF;
+  --color-muted: #74716C;
+  --color-border: #D8D4CE;
+  --color-dark-stage: #111111;
+}
+
+body {
+  background-color: var(--color-gallery);
+  color: var(--color-carbon);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, .font-display {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #F4F2EE;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8D4CE;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A14F39;
+}
+
+/* Gallery Surfaces */
+.gallery-card {
+  background: #FFFFFF;
+  border: 1px solid #D8D4CE;
+}
+
+.gallery-stage {
+  background: #F4F2EE;
+}
+
+.carbon-stage {
+  background: #111111;
+  color: #FFFFFF;
+}
+
+/* Range input styling for 360 viewer */
+input[type=range].scrub-slider {
+  accent-color: #A14F39;
+}
+
+/* Exploded view annotation beacon */
+@keyframes monoBeacon {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(161, 79, 57, 0.7);
+  }
+  70% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 12px rgba(161, 79, 57, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(161, 79, 57, 0);
+  }
+}
+
+.annotation-beacon {
+  animation: monoBeacon 2.2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
